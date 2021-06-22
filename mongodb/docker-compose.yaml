@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: voting-mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=voting-secredi
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=RootSicredi
+    volumes:
+      - ./data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - 27017:27017
+    restart: always
