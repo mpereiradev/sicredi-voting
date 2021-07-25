@@ -1,15 +1,15 @@
-package com.sicredi.voting.voting.domain.response;
+package com.sicredi.voting.voting.domain;
 
 import com.google.common.base.Objects;
-import com.sicredi.voting.voting.domain.VotingSession;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class ScheduleResponse implements Serializable {
+@Document(collection = "topics")
+public class Topic {
 
-    private static final long serialVersionUID = 2383776434073541693L;
-
+    @MongoId
     private String id;
 
     private String subject;
@@ -53,9 +53,9 @@ public class ScheduleResponse implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ScheduleResponse)) return false;
-        ScheduleResponse that = (ScheduleResponse) o;
-        return Objects.equal(getId(), that.getId()) && Objects.equal(getSubject(), that.getSubject()) && Objects.equal(getDescription(), that.getDescription()) && Objects.equal(getVotingSessions(), that.getVotingSessions());
+        if (!(o instanceof Topic)) return false;
+        Topic topic = (Topic) o;
+        return Objects.equal(getId(), topic.getId()) && Objects.equal(getSubject(), topic.getSubject()) && Objects.equal(getDescription(), topic.getDescription()) && Objects.equal(getVotingSessions(), topic.getVotingSessions());
     }
 
     @Override

@@ -4,7 +4,7 @@ import com.google.common.base.Objects;
 
 import java.io.Serializable;
 
-public class ScheduleRequest implements Serializable{
+public class TopicRequest implements Serializable{
     private static final long serialVersionUID = 4011556253679507550L;
 
     private String subject;
@@ -30,8 +30,8 @@ public class ScheduleRequest implements Serializable{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ScheduleRequest)) return false;
-        ScheduleRequest that = (ScheduleRequest) o;
+        if (!(o instanceof TopicRequest)) return false;
+        TopicRequest that = (TopicRequest) o;
         return Objects.equal(getSubject(), that.getSubject()) && Objects.equal(getDescription(), that.getDescription());
     }
 

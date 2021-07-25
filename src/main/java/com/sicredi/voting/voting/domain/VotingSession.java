@@ -7,13 +7,13 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Document(collation = "voting-sessions")
+@Document(collection = "voting-sessions")
 public class VotingSession {
 
     @MongoId
     private String id;
 
-    private Schedule schedule;
+    private Topic topic;
 
     private String title;
 
@@ -31,12 +31,12 @@ public class VotingSession {
         this.id = id;
     }
 
-    public Schedule getSchedule() {
-        return schedule;
+    public Topic getTopic() {
+        return topic;
     }
 
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 
     public String getTitle() {
@@ -76,19 +76,19 @@ public class VotingSession {
         if (this == o) return true;
         if (!(o instanceof VotingSession)) return false;
         VotingSession that = (VotingSession) o;
-        return Objects.equal(getId(), that.getId()) && Objects.equal(getSchedule(), that.getSchedule()) && Objects.equal(getTitle(), that.getTitle()) && Objects.equal(getClosing(), that.getClosing()) && Objects.equal(getVotes(), that.getVotes()) && getStatus() == that.getStatus();
+        return Objects.equal(getId(), that.getId()) && Objects.equal(getTopic(), that.getTopic()) && Objects.equal(getTitle(), that.getTitle()) && Objects.equal(getClosing(), that.getClosing()) && Objects.equal(getVotes(), that.getVotes()) && getStatus() == that.getStatus();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId(), getSchedule(), getTitle(), getClosing(), getVotes(), getStatus());
+        return Objects.hashCode(getId(), getTopic(), getTitle(), getClosing(), getVotes(), getStatus());
     }
 
     @Override
     public String toString() {
         return "VotingSession{" +
                 "id='" + id + '\'' +
-                ", schedule=" + schedule +
+                ", topic=" + topic +
                 ", title='" + title + '\'' +
                 ", closing=" + closing +
                 ", votes=" + votes +

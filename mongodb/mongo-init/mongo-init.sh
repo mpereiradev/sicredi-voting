@@ -1,0 +1,2 @@
+#!/bin/bash
+mongo --eval "db.auth('root', 'RootSicredi'); db = db.getSiblingDB('voting-secredi'); db.createUser({ user: 'sicredi', pwd: 'Sicredi@2021', roles: [{ role: 'readWrite', db: 'voting-secredi' }] });"

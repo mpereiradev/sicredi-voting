@@ -4,7 +4,7 @@ import com.google.common.base.Objects;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@Document(collation = "associates")
+@Document(collection = "associates")
 public class Associate {
 
     @MongoId

@@ -18,6 +18,7 @@ dependencies {
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'com.google.guava:guava:30.1.1-jre'
 	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
